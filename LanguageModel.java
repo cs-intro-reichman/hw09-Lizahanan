@@ -60,7 +60,16 @@ public class LanguageModel {
 
     // Returns a random character from the given probabilities list.
 	public char getRandomChar(List probs) {
-		// Your code goes here
+        // Generate a random number between 0 and 1
+		double r = Math.random();
+        CharData[] charDataArray = probs.toArray();
+        //for each charData object in the list, if the random number is less than the cumulative probability of the object, return the character of the object
+        for(CharData cd : charDataArray){
+            if(r < cd.cp){
+                return cd.chr;
+            }
+        }
+        return ' ';
 	}
 
     /**
