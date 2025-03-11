@@ -45,14 +45,16 @@ public class List {
             current = current.next;
         }
         return sb.toString();
-        
     }
 
     /** Returns the index of the first CharData object in this list
      *  that has the same chr value as the given char,
      *  or -1 if there is no such object in this list. */
     public int indexOf(char chr) {
-        // Your code goes here
+        //traverse the list until you find the character
+        //return the index if found
+        //return -1 if not found
+        
     }
 
     /** If the given character exists in one of the CharData objects in this list,
