@@ -68,8 +68,15 @@ public class List {
             if(c == chr) {
                 return index;
             }
-            current = it.next(); //will it not check the last element?
+            current = it.next();
+             //will it not check the last element?
             index++;
+            if(!it.hasNext()){
+                char a = current.chr;
+                if(c== chr){
+                    return index;
+                }
+            }
         }
         return -1;
     }
@@ -82,7 +89,12 @@ public class List {
      *  increments its counter. Otherwise, adds a new CharData object with the
      *  given chr to the beginning of this list. */
     public void update(char chr) {
-        // Your code goes here
+        //check if the element exists and get its index 
+        int charIndex = indexOf(chr);
+        if(charIndex != -1){
+            //increment the counder of the CharData at this index
+
+        }
     }
 
     /** GIVE If the given character exists in one of the CharData objects
@@ -90,6 +102,7 @@ public class List {
      *  true. Otherwise, returns false. */
     public boolean remove(char chr) {
         // Your code goes here
+        return false;
     }
 
     /** Returns the CharData object at the specified index in this list. 
@@ -97,6 +110,7 @@ public class List {
      *  throws an IndexOutOfBoundsException. */
     public CharData get(int index) {
         // Your code goes here
+        
     }
 
     /** Returns an array of CharData objects, containing all the CharData objects in this list. */
