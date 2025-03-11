@@ -90,7 +90,13 @@ public class LanguageModel {
 	 * @return the generated text
 	 */
 	public String generate(String initialText, int textLength) {
-		// Your code goes here
+		StringBuilder str = new StringBuilder();
+        str.append(initialText);
+        while(str.length() < textLength){
+            String key = str.substring(str.length() - windowLength);
+            str.append(getRandomChar(CharDataMap.get(key)));
+        }
+        return str.toString();
 	}
 
     /** Returns a string representing the map of this language model. */
