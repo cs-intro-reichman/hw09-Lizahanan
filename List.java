@@ -1,3 +1,5 @@
+import java.io.CharArrayReader;
+
 /** A linked list of character data objects.
  *  (Actually, a list of Node objects, each holding a reference to a character data object.
  *  However, users of this class are not aware of the Node objects. As far as they are concerned,
@@ -93,8 +95,13 @@ public class List {
         int charIndex = indexOf(chr);
         if(charIndex != -1){
             //increment the counder of the CharData at this index
-
+            CharData c = get(charIndex);
+            c.count++;
+        } else {
+            //add if not in the list
+            addFirst(chr);
         }
+       
     }
 
     /** GIVE If the given character exists in one of the CharData objects
@@ -109,8 +116,9 @@ public class List {
      *  If the index is negative or is greater than the size of this list, 
      *  throws an IndexOutOfBoundsException. */
     public CharData get(int index) {
-        // Your code goes here
-        
+        ListIterator it = new ListIterator(first);
+        CharData c = it.getCharData(index); //correctly throws the exception
+        return c;   
     }
 
     /** Returns an array of CharData objects, containing all the CharData objects in this list. */
