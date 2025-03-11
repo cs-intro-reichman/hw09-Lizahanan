@@ -55,7 +55,24 @@ public class List {
      *  that has the same chr value as the given char,
      *  or -1 if there is no such object in this list. */
     public int indexOf(char chr) {
-        //traverse the list until you find the character
+        //iterator
+        ListIterator it = new ListIterator(first);
+        //index
+        int index = 0;
+        //current CharData object
+        CharData current = first.cp;
+        //while there is a next element
+        while(it.hasNext()){
+            char c = current.chr;
+            //check if they are equalt
+            if(c == chr) {
+                return index;
+            }
+            current = it.next(); //will it not check the last element?
+            index++;
+        }
+        return -1;
+    }
 
         //return the index if found
         //return -1 if not found
