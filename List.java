@@ -108,8 +108,23 @@ public class List {
      *  in this list, removes this CharData object from the list and returns
      *  true. Otherwise, returns false. */
     public boolean remove(char chr) {
-        // Your code goes here
+        if (first.cp.equals(chr)) {
+            first = first.next;
+            size--;
+            return true;
+        }
+        Node previous = first;
+        do {
+            Node current = previous.next;
+            if (current.cp.equals(chr)) {
+                previous.next = current.next;
+                size--;
+                return true;
+            }
+            previous = current;
+        } while (previous.next != null);
         return false;
+        
     }
 
     /** Returns the CharData object at the specified index in this list. 
