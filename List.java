@@ -74,10 +74,9 @@ public class List {
         return -1;
     }
 
-        //return the index if found
-        //return -1 if not found
         
-    }
+        
+    
 
     /** If the given character exists in one of the CharData objects in this list,
      *  increments its counter. Otherwise, adds a new CharData object with the
