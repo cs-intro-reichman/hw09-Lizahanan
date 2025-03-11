@@ -58,26 +58,10 @@ public class List {
      *  or -1 if there is no such object in this list. */
     public int indexOf(char chr) {
         //iterator
-        ListIterator it = listIterator(0);
-        //index
-        int index = -1;
-        //current CharData object
-        CharData current = first.cp;
-        //while there is a next element
-        while(it.hasNext()){
-            char c = current.chr;
-            //check if they are equalt
-            if(c == chr) {
+        ListIterator it = new ListIterator(first);
+        for (int index = 0; it.hasNext(); index++) {
+            if (it.next().equals(chr)) {
                 return index;
-            }
-            current = it.next();
-             //will it not check the last element?
-            index++;
-            if(!it.hasNext()){
-                char a = current.chr;
-                if(a== chr){
-                    return index;
-                }
             }
         }
         return -1;
