@@ -35,7 +35,17 @@ public class List {
     
     /** GIVE Textual representation of this list. */
     public String toString() {
-        // Your code goes here
+        //iterate the list and print its elements
+        //charData.toString() will return the character and its count
+        //use StringBuilder to concatenate the strings
+        StringBuilder sb = new StringBuilder();
+        Node current = first;
+        while(current != null){
+            sb.append(current.cp.toString());
+            current = current.next;
+        }
+        return sb.toString();
+        
     }
 
     /** Returns the index of the first CharData object in this list
