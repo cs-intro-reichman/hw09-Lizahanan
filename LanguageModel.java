@@ -50,9 +50,9 @@ public class LanguageModel {
 	// characters in the given list. */
 	public void calculateProbabilities(List probs) {				
 		int totalChars = 0;
-        ListIterator it = probs.iterator();
+        ListIterator it = probs.listIterator(0);
         // Count the total number of characters in the list
-        while(it.hasNext() && it == null) {
+        while(it.hasNext() && it != null) {
             totalChars += it.next().count; //for each charData object in the list, add its count to totalChars
         }
         // Calculate the probabilities of each character
@@ -71,7 +71,7 @@ public class LanguageModel {
     // Returns a random character from the given probabilities list.
 	public char getRandomChar(List probs) {
         // Generate a random number between 0 and 1
-		double r = Math.random();
+		double r = randomGenerator.nextDouble();
         CharData[] charDataArray = probs.toArray();
         //for each charData object in the list, if the random number is less than the cumulative probability of the object, return the character of the object
         for(CharData cd : charDataArray){
