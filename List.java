@@ -35,15 +35,19 @@ public class List {
     
     /** GIVE Textual representation of this list. */
     public String toString() {
-        //iterate the list and print its elements
-        //charData.toString() will return the character and its count
-        //use StringBuilder to concatenate the strings
+        //iterator 
+        ListIterator it = new ListIterator(first);
+        //use stringbuilder to build the string
         StringBuilder sb = new StringBuilder();
-        Node current = first;
-        while(current != null){
-            sb.append(current.cp.toString());
-            current = current.next;
+        sb.append('(');
+        //while there is a next element print it into the stringbuilder
+        while(it.hasNext()){ 
+            sb.append(it.next().toString());
+            if(it.hasNext()){
+                sb.append(' ');
+            }
         }
+        sb.append(')');
         return sb.toString();
     }
 
@@ -52,6 +56,7 @@ public class List {
      *  or -1 if there is no such object in this list. */
     public int indexOf(char chr) {
         //traverse the list until you find the character
+
         //return the index if found
         //return -1 if not found
         
