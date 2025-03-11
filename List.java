@@ -62,7 +62,7 @@ public class List {
         //index
         int index = 0;
         //current CharData object
-        CharData current = first.cp;
+        CharData current = it.next(); 
         //while there is a next element
         while(it.hasNext()){
             char c = current.chr;
