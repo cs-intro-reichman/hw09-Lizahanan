@@ -58,7 +58,7 @@ public class List {
      *  or -1 if there is no such object in this list. */
     public int indexOf(char chr) {
         //iterator
-        ListIterator it = new ListIterator(first);
+        ListIterator it = listIterator(0);
         //index
         int index = 0;
         //current CharData object
