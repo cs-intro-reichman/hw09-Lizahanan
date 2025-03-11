@@ -60,7 +60,7 @@ public class List {
         //iterator
         ListIterator it = listIterator(0);
         //index
-        int index = 0;
+        int index = -1;
         //current CharData object
         CharData current = first.cp;
         //while there is a next element
