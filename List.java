@@ -62,7 +62,7 @@ public class List {
         //index
         int index = 0;
         //current CharData object
-        CharData current = it.next(); 
+        CharData current = first.cp;
         //while there is a next element
         while(it.hasNext()){
             char c = current.chr;
@@ -75,7 +75,7 @@ public class List {
             index++;
             if(!it.hasNext()){
                 char a = current.chr;
-                if(c== chr){
+                if(a== chr){
                     return index;
                 }
             }
